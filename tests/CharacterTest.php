@@ -4,15 +4,30 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 use App\Character;
-use App\Faction;
+
 
 class CharacterTest extends TestCase {
 
 	/** @test */
-	public function test_function_example()
+	public function test_character_health()
 	{
-		$this->assertEquals(4, 4);
+		$yoshi = new Character;
+		$yoshiHealth = $yoshi ->getHealth();
+		$this->assertEquals(1000, $yoshiHealth);
 	}
+	public function test_level()
+	{
+		$yoshi = new Character;
+		$yoshiLevel = $yoshi ->getLevel();
+		$this->assertEquals(1, $yoshiLevel);
+	}
+	public function test_live()
+	{
+		$yoshi = new Character;
+		$yoshiLive = $yoshi ->getAlive();
+		$this->assertEquals("Alive", $yoshiLive);
+	}
+	
 	
 
 }
